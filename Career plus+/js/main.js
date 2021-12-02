@@ -1,0 +1,60 @@
+function openNav(){
+    document.querySelector(".overlay-content").style.width="100%";
+}
+function closeNav(){
+    document.querySelector(".overlay-content").style.width="0%";
+} 
+// Owl carousel
+$('.article-slider').owlCarousel({
+    loop:true,
+    margin:10,
+    items:3,
+    nav:true,
+    // autoplay:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        768:{
+            items:2,
+            nav:true,
+        },
+        1100:{
+            items:3,
+            nav:true,
+        }
+    }
+})
+$('.gallery-slider').owlCarousel({
+    loop:true,
+    margin:10,
+    items:3,
+    nav:true,
+    autoplay:true,
+    responsiveClass:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        768:{
+            items:2,
+            nav:true,
+        },
+        900:{
+            items:3,
+            nav:true,
+        }
+    }
+})
+
+$(".col").slice(0,6).show();
+$(".see-more").on("click",function(){
+    $(".col:hidden").slice(0,3).slideDown()
+    if($(".col:hidden").length==0){
+        $(".see-more").fadeOut('slow')
+    }
+})
